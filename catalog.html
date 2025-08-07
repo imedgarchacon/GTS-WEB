@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Go To Save | Productos Rescatados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="catalog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="background-elements">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+        <div class="bg-circle bg-circle-3"></div>
+        <div class="bg-square bg-square-1"></div>
+        <div class="bg-square bg-square-2"></div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <svg class="gts-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="url(#logoGradient)"/>
+                        <path d="M30 40 Q50 20 70 40 Q50 60 30 40" fill="#ffffff" opacity="0.9"/>
+                        <path d="M35 45 Q50 25 65 45 Q50 65 35 45" fill="#ffffff" opacity="0.7"/>
+                        <circle cx="40" cy="35" r="3" fill="#3bbca9"/>
+                        <circle cx="60" cy="35" r="3" fill="#7be1a1"/>
+                        <path d="M45 50 L55 50 L50 45 Z" fill="#005f99"/>
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3bbca9;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7be1a1;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Go To Save</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="#catalog" class="nav-link active">Catálogo</a>
+                <a href="#about" class="nav-link">Nosotros</a>
+                <a href="#contact" class="nav-link">Contacto</a>
+            </div>
+            <div class="nav-actions">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar productos..." class="search-input" id="searchInput">
+                </div>
+                <div class="user-avatar" id="userAvatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- User Dashboard Modal -->
+    <div class="modal" id="userModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Mi Perfil</h3>
+                <button class="close-btn" id="closeUserModal">&times;</button>
+            </div>
+            <div class="user-dashboard">
+                <div class="user-info">
+                    <div class="user-avatar-large">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h4 id="userName">Usuario GTS</h4>
+                    <p class="user-email">usuario@gts.com</p>
+                </div>
+                <div class="user-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-utensils"></i>
+                        <div class="stat-info">
+                            <h5>Comidas Salvadas</h5>
+                            <span class="stat-number">24</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-ticket-alt"></i>
+                        <div class="stat-info">
+                            <h5>Vouchers Activos</h5>
+                            <span class="stat-number">3</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-coins"></i>
+                        <div class="stat-info">
+                            <h5>GTS Coins</h5>
+                            <span class="stat-number">1,250</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-actions">
+                    <button class="btn btn-primary">Ver Historial</button>
+                    <button class="btn btn-secondary">Configuración</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content cart-modal">
+            <div class="modal-header">
+                <h3>Mi Carrito</h3>
+                <button class="close-btn" id="closeCartModal">&times;</button>
+            </div>
+            <div class="cart-content">
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart items will be dynamically added here -->
+                </div>
+                <div class="cart-summary">
+                    <div class="cart-total">
+                        <span>Total:</span>
+                        <span class="total-amount" id="cartTotal">€0.00</span>
+                    </div>
+                    <button class="btn btn-primary btn-large" id="checkoutBtn">
+                        <i class="fas fa-credit-card"></i>
+                        Pagar Ahora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content checkout-modal">
+            <div class="modal-header">
+                <h3>Finalizar Compra</h3>
+                <button class="close-btn" id="closeCheckoutModal">&times;</button>
+            </div>
+            <div class="checkout-content">
+                <div class="delivery-options">
+                    <h4>¿Cómo quieres recibir tu pedido?</h4>
+                    <div class="option-buttons">
+                        <button class="option-btn" data-option="delivery">
+                            <i class="fas fa-truck"></i>
+                            <span>Delivery</span>
+                        </button>
+                        <button class="option-btn" data-option="pickup">
+                            <i class="fas fa-store"></i>
+                            <span>Recoger en Tienda</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="checkout-summary">
+                    <h4>Resumen del Pedido</h4>
+                    <div class="summary-items" id="checkoutItems">
+                        <!-- Summary items will be added here -->
+                    </div>
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span class="total-amount" id="checkoutTotal">€0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- QR Modal -->
+    <div class="modal" id="qrModal">
+        <div class="modal-content qr-modal">
+            <div class="modal-header">
+                <h3>Código QR para Recoger</h3>
+                <button class="close-btn" id="closeQrModal">&times;</button>
+            </div>
+            <div class="qr-content">
+                <div class="qr-code" id="qrCode">
+                    <!-- QR code will be generated here -->
+                </div>
+                <div class="qr-info">
+                    <h4>Pedido #GTS-2024-001</h4>
+                    <p>Muestra este código QR al recoger tu pedido en la tienda</p>
+                    <div class="pickup-details">
+                        <p><i class="fas fa-map-marker-alt"></i> Calle Principal 123, Madrid</p>
+                        <p><i class="fas fa-clock"></i> Disponible en 30 minutos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="catalog-main">
+        <!-- Hero Section -->
+        <section class="catalog-hero">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Productos <span class="highlight">Rescatados</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Descubre alimentos frescos y de calidad que ayudan al planeta mientras ahorras dinero
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filters-section">
+            <div class="container">
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <h4>Filtrar por dieta:</h4>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">
+                                <i class="fas fa-th"></i>
+                                Todos
+                            </button>
+                            <button class="filter-btn" data-filter="vegan">
+                                <i class="fas fa-seedling"></i>
+                                Vegano
+                            </button>
+                            <button class="filter-btn" data-filter="vegetarian">
+                                <i class="fas fa-leaf"></i>
+                                Vegetariano
+                            </button>
+                            <button class="filter-btn" data-filter="gluten-free">
+                                <i class="fas fa-wheat-awn"></i>
+                                Sin Gluten
+                            </button>
+                        </div>
+                    </div>
+                    <div class="sort-group">
+                        <select class="sort-select" id="sortSelect">
+                            <option value="name">Ordenar por nombre</option>
+                            <option value="price-low">Precio: menor a mayor</option>
+                            <option value="price-high">Precio: mayor a menor</option>
+                            <option value="rating">Mejor valorados</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Grid -->
+        <section class="products-section">
+            <div class="container">
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Detail Modal -->
+        <div class="modal" id="productModal">
+            <div class="modal-content product-modal">
+                <div class="modal-header">
+                    <h3 id="modalProductName">Nombre del Producto</h3>
+                    <button class="close-btn" id="closeProductModal">&times;</button>
+                </div>
+                <div class="product-detail-content">
+                    <div class="product-image-large">
+                        <img id="modalProductImage" src="" alt="Producto">
+                    </div>
+                    <div class="product-info-detail">
+                        <div class="product-price-large">
+                            <span class="original-price-large" id="modalOriginalPrice">€0.00</span>
+                            <span class="current-price-large" id="modalCurrentPrice">€0.00</span>
+                        </div>
+                        <div class="product-description-full" id="modalDescription">
+                            Descripción completa del producto...
+                        </div>
+                        <div class="product-ingredients" id="modalIngredients">
+                            <h5>Ingredientes:</h5>
+                            <p>Lista de ingredientes...</p>
+                        </div>
+                        <div class="product-ratings" id="modalRatings">
+                            <h5>Valoraciones:</h5>
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-text">4.8 (24 reseñas)</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <button class="qty-btn" id="decreaseQty">-</button>
+                                <span class="qty-display" id="qtyDisplay">1</span>
+                                <button class="qty-btn" id="increaseQty">+</button>
+                            </div>
+                            <button class="btn btn-primary btn-large" id="addToCartBtn">
+                                <i class="fas fa-cart-plus"></i>
+                                Añadir al Carrito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-container">
+                            <svg class="gts-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="45" fill="url(#logoGradient)"/>
+                                <path d="M30 40 Q50 20 70 40 Q50 60 30 40" fill="#ffffff" opacity="0.9"/>
+                                <path d="M35 45 Q50 25 65 45 Q50 65 35 45" fill="#ffffff" opacity="0.7"/>
+                                <circle cx="40" cy="35" r="3" fill="#3bbca9"/>
+                                <circle cx="60" cy="35" r="3" fill="#7be1a1"/>
+                                <path d="M45 50 L55 50 L50 45 Z" fill="#005f99"/>
+                                <defs>
+                                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#3bbca9;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#7be1a1;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Go To Save</span>
+                    </div>
+                    <p class="footer-description">
+                        Transformando la forma de acceder a alimentos frescos y sostenibles.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Productos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Frutas y Verduras</a></li>
+                        <li><a href="#">Productos Orgánicos</a></li>
+                        <li><a href="#">Snacks Saludables</a></li>
+                        <li><a href="#">Bebidas Naturales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="#">Impacto Ambiental</a></li>
+                        <li><a href="#">Prensa</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Soporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centro de ayuda</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Términos de servicio</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Go To Save. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="catalog.js"></script>
+</body>
+</html> 

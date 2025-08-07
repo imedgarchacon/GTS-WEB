@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Go To Save</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <!-- Background Elements -->
+    <div class="background-elements">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+        <div class="bg-circle bg-circle-3"></div>
+        <div class="bg-square bg-square-1"></div>
+        <div class="bg-square bg-square-2"></div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <svg class="gts-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="url(#logoGradient)"/>
+                        <path d="M30 40 Q50 20 70 40 Q50 60 30 40" fill="#ffffff" opacity="0.9"/>
+                        <path d="M35 45 Q50 25 65 45 Q50 65 35 45" fill="#ffffff" opacity="0.7"/>
+                        <circle cx="40" cy="35" r="3" fill="#3bbca9"/>
+                        <circle cx="60" cy="35" r="3" fill="#7be1a1"/>
+                        <path d="M45 50 L55 50 L50 45 Z" fill="#005f99"/>
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3bbca9;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7be1a1;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Go To Save</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="catalog.html" class="nav-link">Catálogo</a>
+                <a href="about.html" class="nav-link">Sobre Nosotros</a>
+                <a href="#contact" class="nav-link">Contacto</a>
+            </div>
+            <div class="nav-actions">
+                <div class="user-avatar" id="userAvatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Main -->
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <aside class="dashboard-sidebar">
+                <div class="user-profile">
+                    <div class="user-avatar-large">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="user-name">María González</h3>
+                    <p class="user-email">maria@gts.com</p>
+                    <div class="user-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">En línea</span>
+                    </div>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <a href="#overview" class="nav-item active">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Resumen</span>
+                    </a>
+                    <a href="#orders" class="nav-item">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span>Mis Pedidos</span>
+                    </a>
+                    <a href="#savings" class="nav-item">
+                        <i class="fas fa-piggy-bank"></i>
+                        <span>Ahorros</span>
+                    </a>
+                    <a href="#vouchers" class="nav-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>Vouchers</span>
+                    </a>
+                    <a href="#coins" class="nav-item">
+                        <i class="fas fa-coins"></i>
+                        <span>GTS Coins</span>
+                    </a>
+                    <a href="#settings" class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Configuración</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="dashboard-content">
+                <!-- Header -->
+                <header class="dashboard-header">
+                    <div class="header-left">
+                        <h1 class="dashboard-title">Mi Dashboard</h1>
+                        <p class="dashboard-subtitle">Bienvenido de vuelta, María</p>
+                    </div>
+                    <div class="header-right">
+                        <div class="notification-bell">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                        <button class="btn btn-primary">
+                            <i class="fas fa-plus"></i>
+                            Nuevo Pedido
+                        </button>
+                    </div>
+                </header>
+
+                <!-- Stats Cards -->
+                <section class="stats-section">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">24</h3>
+                                <p class="stat-label">Comidas Salvadas</p>
+                                <span class="stat-change positive">+3 esta semana</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-ticket-alt"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">3</h3>
+                                <p class="stat-label">Vouchers Activos</p>
+                                <span class="stat-change">2 expiran pronto</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">1,250</h3>
+                                <p class="stat-label">GTS Coins</p>
+                                <span class="stat-change positive">+150 este mes</span>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-euro-sign"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">€89.50</h3>
+                                <p class="stat-label">Total Ahorrado</p>
+                                <span class="stat-change positive">+€12.30 este mes</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Activity -->
+                <section class="activity-section">
+                    <div class="section-header">
+                        <h2>Actividad Reciente</h2>
+                        <a href="#" class="view-all">Ver todo</a>
+                    </div>
+                    
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Pedido Completado</h4>
+                                <p>Manzanas orgánicas y pack de verduras</p>
+                                <span class="activity-time">Hace 2 horas</span>
+                            </div>
+                            <div class="activity-amount">
+                                <span class="amount">€8.50</span>
+                                <span class="savings">-€4.20</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Voucher Ganado</h4>
+                                <p>20% descuento en productos orgánicos</p>
+                                <span class="activity-time">Ayer</span>
+                            </div>
+                            <div class="activity-amount">
+                                <span class="voucher">Voucher</span>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Coins Ganados</h4>
+                                <p>+50 GTS Coins por pedido sostenible</p>
+                                <span class="activity-time">Hace 3 días</span>
+                            </div>
+                            <div class="activity-amount">
+                                <span class="coins">+50</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Quick Actions -->
+                <section class="quick-actions">
+                    <h2>Acciones Rápidas</h2>
+                    <div class="actions-grid">
+                        <button class="action-card">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Hacer Pedido</span>
+                        </button>
+                        <button class="action-card">
+                            <i class="fas fa-ticket-alt"></i>
+                            <span>Usar Voucher</span>
+                        </button>
+                        <button class="action-card">
+                            <i class="fas fa-gift"></i>
+                            <span>Invitar Amigos</span>
+                        </button>
+                        <button class="action-card">
+                            <i class="fas fa-heart"></i>
+                            <span>Favoritos</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html> 

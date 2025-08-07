@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - Go To Save</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="background-elements">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+        <div class="bg-circle bg-circle-3"></div>
+        <div class="bg-square bg-square-1"></div>
+        <div class="bg-square bg-square-2"></div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <svg class="gts-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="url(#logoGradient)"/>
+                        <path d="M30 40 Q50 20 70 40 Q50 60 30 40" fill="#ffffff" opacity="0.9"/>
+                        <path d="M35 45 Q50 25 65 45 Q50 65 35 45" fill="#ffffff" opacity="0.7"/>
+                        <circle cx="40" cy="35" r="3" fill="#3bbca9"/>
+                        <circle cx="60" cy="35" r="3" fill="#7be1a1"/>
+                        <path d="M45 50 L55 50 L50 45 Z" fill="#005f99"/>
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3bbca9;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7be1a1;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Go To Save</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="about.html" class="nav-link active">Sobre Nosotros</a>
+                <a href="catalog.html" class="nav-link">Catálogo</a>
+                <a href="login.html" class="nav-link">Sign In / Sign Up</a>
+                <a href="#contact" class="nav-link">Contáctanos</a>
+            </div>
+            <div class="nav-actions">
+                <div class="user-avatar" id="userAvatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="cart-icon" id="cartIcon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <div class="slide-content">
+                    <h1>Nuestro Equipo</h1>
+                    <p>11 apasionados profesionales trabajando por un futuro más sostenible</p>
+                </div>
+                <div class="slide-image">
+                    <div class="team-photo">
+                        <i class="fas fa-users"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <div class="slide-content">
+                    <h1>Misión</h1>
+                    <p>Reducir el desperdicio alimentario conectando productores con consumidores conscientes</p>
+                </div>
+                <div class="slide-image">
+                    <div class="mission-photo">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="carousel-slide">
+                <div class="slide-content">
+                    <h1>Visión</h1>
+                    <p>Crear un mundo donde ningún alimento se desperdicie y todos tengan acceso a comida de calidad</p>
+                </div>
+                <div class="slide-image">
+                    <div class="vision-photo">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="carousel-controls">
+            <button class="carousel-btn prev" onclick="changeSlide(-1)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            <button class="carousel-btn next" onclick="changeSlide(1)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Team Grid -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Conoce a Nuestro Equipo</h2>
+                <p>Los 11 miembros que hacen posible Go To Save</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>María González</h3>
+                    <p class="member-role">CEO & Fundadora</p>
+                    <div class="member-contact">
+                        <p><i class="fas fa-phone"></i> +34 600 123 456</p>
+                        <p><i class="fas fa-envelope"></i> maria@gts.com</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Carlos Rodríguez</h3>
+                    <p class="member-role">CTO & Lead Developer</p>
+                    <div class="member-contact">
+                        <p><i class="fas fa-phone"></i> +34 600 123 457</p>
+                        <p><i class="fas fa-envelope"></i> carlos@gts.com</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Ana Martínez</h3>
+                    <p class="member-role">Lead Designer</p>
+                    <div class="member-contact">
+                        <p><i class="fas fa-phone"></i> +34 600 123 458</p>
+                        <p><i class="fas fa-envelope"></i> ana@gts.com</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>David López</h3>
+                    <p class="member-role">Marketing Manager</p>
+                    <div class="member-contact">
+                        <p><i class="fas fa-phone"></i> +34 600 123 459</p>
+                        <p><i class="fas fa-envelope"></i> david@gts.com</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Laura Sánchez</h3>
+                    <p class="member-role">Product Manager</p>
+                    <div class="member-contact">
+                        <p><i class="fas fa-phone"></i> +34 600 123 460</p>
+                        <p><i class="fas fa-envelope"></i> laura@gts.com</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Javier Pérez</h3>
+                    <p class="member-role">Backend Developer</p>
+                    <div class="member-contact">
+                        <p><i class="fas fa-phone"></i> +34 600 123 461</p>
+                        <p><i class="fas fa-envelope"></i> javier@gts.com</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Sofía García</h3>
+                    <p class="member-role">Frontend Developer</p>
+                    <div class="member-contact">
+                        <p><i class="fas fa-phone"></i> +34 600 123 462</p>
+                        <p><i class="fas fa-envelope"></i> sofia@gts.com</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Miguel Torres</h3>
+                    <p class="member-role">Data Scientist</p>
+                    <div class="member-contact">
+                        <p><i class="fas fa-phone"></i> +34 600 123 463</p>
+                        <p><i class="fas fa-envelope"></i> miguel@gts.com</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Elena Ruiz</h3>
+                    <p class="member-role">UX/UI Designer</p>
+                    <div class="member-contact">
+                        <p><i class="fas fa-phone"></i> +34 600 123 464</p>
+                        <p><i class="fas fa-envelope"></i> elena@gts.com</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Roberto Jiménez</h3>
+                    <p class="member-role">DevOps Engineer</p>
+                    <div class="member-contact">
+                        <p><i class="fas fa-phone"></i> +34 600 123 465</p>
+                        <p><i class="fas fa-envelope"></i> roberto@gts.com</p>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-photo">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Carmen Vega</h3>
+                    <p class="member-role">Business Analyst</p>
+                    <div class="member-contact">
+                        <p><i class="fas fa-phone"></i> +34 600 123 466</p>
+                        <p><i class="fas fa-envelope"></i> carmen@gts.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-container">
+                            <svg class="gts-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="45" fill="url(#logoGradient)"/>
+                                <path d="M30 40 Q50 20 70 40 Q50 60 30 40" fill="#ffffff" opacity="0.9"/>
+                                <path d="M35 45 Q50 25 65 45 Q50 65 35 45" fill="#ffffff" opacity="0.7"/>
+                                <circle cx="40" cy="35" r="3" fill="#3bbca9"/>
+                                <circle cx="60" cy="35" r="3" fill="#7be1a1"/>
+                                <path d="M45 50 L55 50 L50 45 Z" fill="#005f99"/>
+                                <defs>
+                                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#3bbca9;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#7be1a1;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Go To Save</span>
+                    </div>
+                    <p class="footer-description">
+                        Transformando la forma de acceder a alimentos frescos y sostenibles.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Productos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Frutas y Verduras</a></li>
+                        <li><a href="#">Productos Orgánicos</a></li>
+                        <li><a href="#">Snacks Saludables</a></li>
+                        <li><a href="#">Bebidas Naturales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="#">Impacto Ambiental</a></li>
+                        <li><a href="#">Prensa</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Soporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centro de ayuda</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Términos de servicio</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Go To Save. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="about.js"></script>
+</body>
+</html> 

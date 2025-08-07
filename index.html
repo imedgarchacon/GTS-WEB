@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good To Save - Turning waste into food one meal at a time</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="background-elements">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+        <div class="bg-circle bg-circle-3"></div>
+        <div class="bg-square bg-square-1"></div>
+        <div class="bg-square bg-square-2"></div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-container">
+                    <svg class="gts-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Fondo del logo -->
+                        <circle cx="50" cy="50" r="45" fill="url(#logoGradient)"/>
+                        
+                        <!-- Elementos del logo -->
+                        <path d="M30 40 Q50 20 70 40 Q50 60 30 40" fill="#ffffff" opacity="0.9"/>
+                        <path d="M35 45 Q50 25 65 45 Q50 65 35 45" fill="#ffffff" opacity="0.7"/>
+                        
+                        <!-- Símbolos -->
+                        <circle cx="40" cy="35" r="3" fill="#3bbca9"/>
+                        <circle cx="60" cy="35" r="3" fill="#7be1a1"/>
+                        <path d="M45 50 L55 50 L50 45 Z" fill="#005f99"/>
+                        
+                        <!-- Definición del gradiente -->
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3bbca9;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#7be1a1;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Good To Save</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link" onclick="scrollToSection('home')">Inicio</a>
+                <a href="about.html" class="nav-link">Sobre Nosotros</a>
+                <a href="catalog.html" class="nav-link">Catálogo</a>
+                <a href="login.html" class="nav-link">Sign In / Sign Up</a>
+                <a href="#contact" class="nav-link">Contáctanos</a>
+            </div>
+            <div class="nav-actions">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar productos..." class="search-input">
+                </div>
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Turning Waste.<br>
+                    <span class="highlight">Into Hope.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Pequeños cambios, grandes resultados.
+                    Descubre cómo tus hábitos de consumo pueden generar un impacto positivo para ti y para el planeta.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="window.location.href='login.html'">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Iniciar sesión</span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="window.location.href='catalog.html'">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Empieza a comprar con GTS</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <i class="fas fa-piggy-bank"></i>
+                    <span>Ahorro inteligente</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-leaf"></i>
+                    <span>Sostenible</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Crecimiento</span>
+                </div>
+                <div class="hero-illustration">
+                    <div class="illustration-container">
+                        <div class="person-1"></div>
+                        <div class="person-2"></div>
+                        <div class="savings-graph"></div>
+                        <div class="products-3d"></div>
+                    </div>
+                    <!-- Nueva imagen ilustrativa -->
+                    <div class="hero-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJ1cmwoI2dyYWRpZW50KSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzYmJjYTk7c3RvcC1vcGFjaXR5OjEiIC8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzdiZTFhMTtzdG9wLW9wYWNpdHk6MSIgLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNTAiIHI9IjgwIiBmaWxsPSIjMDA1Zjk5IiBvcGFjaXR5PSIwLjEiLz4KPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTUwIiByPSI2MCIgZmlsbD0iIzAwNWY5OSIgb3BhY2l0eT0iMC4yIi8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjE1MCIgcj0iNDAiIGZpbGw9IiMwMDVmOTkiIG9wYWNpdHk9IjAuMyIvPgo8cGF0aCBkPSJNMTgwIDEyMEwyMjAgMTIwTDIwMCAxMDBaIiBmaWxsPSIjM2JjY2E5Ii8+CjxwYXRoIGQ9Ik0xODAgMTgwTDIyMCAxODBMMjAwIDE2MFoiIGZpbGw9IiM3YmUxYTEiLz4KPHJlY3QgeD0iMTcwIiB5PSIxMzAiIHdpZHRoPSI2MCIgaGVpZ2h0PSI0MCIgcng9IjUiIGZpbGw9IiNmZmZmZmYiIG9wYWNpdHk9IjAuOSIvPgo8L3N2Zz4K" alt="Ilustración de ahorro inteligente" class="hero-main-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cómo funciona</h2>
+                <p class="section-subtitle">Tres pasos simples para transformar tu forma de ahorrar</p>
+            </div>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3 class="step-title">1. Regístrate</h3>
+                    <p class="step-description">
+                        Crea tu cuenta en menos de 2 minutos y comienza tu viaje hacia el ahorro inteligente.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3 class="step-title">2. Configura</h3>
+                    <p class="step-description">
+                        Personaliza tus metas de ahorro y define tus productos esenciales favoritos.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="step-title">3. Ahorra</h3>
+                    <p class="step-description">
+                        Disfruta de descuentos exclusivos y ve crecer tus ahorros de forma automática.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Beneficios de Good To Save</h2>
+                <p class="section-subtitle">Descubre por qué miles de personas confían en nosotros</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3 class="benefit-title">Descuentos exclusivos</h3>
+                    <p class="benefit-description">
+                        Accede a ofertas especiales en productos esenciales que no encontrarás en ningún otro lugar.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="benefit-title">Seguridad garantizada</h3>
+                    <p class="benefit-description">
+                        Tus datos y transacciones están protegidos con la más alta tecnología de seguridad.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="benefit-title">Acceso móvil</h3>
+                    <p class="benefit-description">
+                        Gestiona tus ahorros desde cualquier lugar con nuestra app móvil intuitiva.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="benefit-title">Análisis inteligente</h3>
+                    <p class="benefit-description">
+                        Recibe insights personalizados sobre tus hábitos de consumo y oportunidades de ahorro.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="benefit-title">Sostenibilidad</h3>
+                    <p class="benefit-description">
+                        Contribuye al medio ambiente mientras ahorras con productos eco-friendly.
+                    </p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="benefit-title">Soporte 24/7</h3>
+                    <p class="benefit-description">
+                        Nuestro equipo está disponible para ayudarte en cualquier momento del día.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Productos destacados</h2>
+                <p class="section-subtitle">Descubre las mejores ofertas en productos esenciales</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-3d"></div>
+                        <div class="discount-badge">-25%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Kit de limpieza eco</h3>
+                        <p class="product-description">Productos de limpieza sostenibles para tu hogar</p>
+                        <div class="product-price">
+                            <span class="original-price">€45.99</span>
+                            <span class="current-price">€34.49</span>
+                        </div>
+                        <button class="btn btn-product">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-3d"></div>
+                        <div class="discount-badge">-30%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Pack nutricional premium</h3>
+                        <p class="product-description">Suplementos naturales para tu bienestar diario</p>
+                        <div class="product-price">
+                            <span class="original-price">€89.99</span>
+                            <span class="current-price">€62.99</span>
+                        </div>
+                        <button class="btn btn-product">Añadir al carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="product-3d"></div>
+                        <div class="discount-badge">-20%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Set de cocina inteligente</h3>
+                        <p class="product-description">Utensilios de cocina que ahorran tiempo y energía</p>
+                        <div class="product-price">
+                            <span class="original-price">€129.99</span>
+                            <span class="current-price">€103.99</span>
+                        </div>
+                        <button class="btn btn-product">Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Lo que dicen nuestros usuarios</h2>
+                <p class="section-subtitle">Historias reales de personas que han transformado su forma de ahorrar</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-circle">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            "Good To Save ha cambiado completamente mi forma de gestionar mis finanzas. 
+                            En solo 3 meses he ahorrado más de €500 en productos esenciales."
+                        </p>
+                        <div class="testimonial-author">
+                            <h4 class="author-name">María García</h4>
+                            <p class="author-role">Emprendedora</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-circle">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            "La app es súper intuitiva y los descuentos son reales. 
+                            Me encanta que puedo ahorrar mientras cuido del medio ambiente."
+                        </p>
+                        <div class="testimonial-author">
+                            <h4 class="author-name">Carlos Rodríguez</h4>
+                            <p class="author-role">Profesor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-avatar">
+                        <div class="avatar-circle">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            "Como familia numerosa, Good To Save nos ha ayudado a reducir 
+                            significativamente nuestros gastos mensuales sin sacrificar calidad."
+                        </p>
+                        <div class="testimonial-author">
+                            <h4 class="author-name">Ana López</h4>
+                            <p class="author-role">Madre de familia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">¿Listo para transformar tu forma de ahorrar?</h2>
+                <p class="cta-subtitle">
+                    Únete a miles de personas que ya están ahorrando de forma inteligente 
+                    y sostenible con Good To Save.
+                </p>
+                <div class="cta-actions">
+                    <button class="btn btn-primary btn-large">
+                        <span>Comenzar ahora</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-outline btn-large">
+                        <i class="fas fa-play"></i>
+                        <span>Ver video</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="logo-container">
+                            <svg class="gts-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Fondo del logo -->
+                                <circle cx="50" cy="50" r="45" fill="url(#logoGradient)"/>
+                                
+                                <!-- Elementos del logo -->
+                                <path d="M30 40 Q50 20 70 40 Q50 60 30 40" fill="#ffffff" opacity="0.9"/>
+                                <path d="M35 45 Q50 25 65 45 Q50 65 35 45" fill="#ffffff" opacity="0.7"/>
+                                
+                                <!-- Símbolos -->
+                                <circle cx="40" cy="35" r="3" fill="#3bbca9"/>
+                                <circle cx="60" cy="35" r="3" fill="#7be1a1"/>
+                                <path d="M45 50 L55 50 L50 45 Z" fill="#005f99"/>
+                                
+                                <!-- Definición del gradiente -->
+                                <defs>
+                                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#3bbca9;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#7be1a1;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Good To Save</span>
+                    </div>
+                    <p class="footer-description">
+                        Transformando la forma de ahorrar y acceder a productos esenciales 
+                        de manera inteligente y sostenible.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Productos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Alimentación</a></li>
+                        <li><a href="#">Hogar</a></li>
+                        <li><a href="#">Bienestar</a></li>
+                        <li><a href="#">Tecnología</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="#">Carreras</a></li>
+                        <li><a href="#">Prensa</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Soporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centro de ayuda</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Términos de servicio</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Good To Save. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Función para scroll suave a secciones
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const offsetTop = section.offsetTop - 80; // Ajuste para el navbar fijo
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Prevenir comportamiento por defecto de enlaces de navegación
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute('href');
+                    const sectionId = href.substring(1);
+                    scrollToSection(sectionId);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
